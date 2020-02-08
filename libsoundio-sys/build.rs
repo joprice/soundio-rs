@@ -104,9 +104,9 @@ fn main() {
     }
 
     println!("cargo:rustc-link-search=native=/usr/lib/arm-linux-gnueabihf/");
-    println!("cargo:rustc-link-lib=asound");
+    println!("cargo:rustc-link-lib=dylib=asound");
     // Link soundio.
-    println!("cargo:rustc-link-lib=soundio");
+    println!("cargo:rustc-link-lib=dylib=soundio");
 
     // OSX
     if target.contains("apple") {
