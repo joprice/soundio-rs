@@ -103,10 +103,8 @@ fn main() {
         println!("cargo:rustc-link-lib=ole32");
     }
 
-    println!("cargo:rustc-link-lib=static=asound");
-
     // Link soundio.
-    println!("cargo:rustc-link-lib=static=soundio");
+    println!("cargo:rustc-link-lib=soundio");
 
     // OSX
     if target.contains("apple") {
