@@ -87,7 +87,7 @@ fn main() {
     // Don't bother with shared libs.
     let dst = cfg
         .define("BUILD_DYNAMIC_LIBS", "OFF")
-        .define("BUILD_STATIC_LIBS", "ON")
+        .define("BUILD_STATIC_LIBS", "OFF")
         .define("BUILD_EXAMPLE_PROGRAMS", "OFF")
         .define("BUILD_TESTS", "OFF")
         .build();
