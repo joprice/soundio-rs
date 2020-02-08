@@ -470,10 +470,11 @@ impl<'a> Device<'a> {
             x => return Err(x.into()),
         };
 
-        match unsafe { (*stream.userdata.instream).layout_error } {
+        //TODO: https://github.com/andrewrk/libsoundio/issues/230
+        /*match unsafe { (*stream.userdata.instream).layout_error } {
             0 => {}
             x => return Err(x.into()),
-        }
+        }*/
 
         Ok(stream)
     }
