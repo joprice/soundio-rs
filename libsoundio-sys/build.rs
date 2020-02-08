@@ -103,6 +103,7 @@ fn main() {
         println!("cargo:rustc-link-lib=ole32");
     }
 
+    println!("cargo:rustc-link-search=native=/usr/lib/arm-linux-gnueabihf/");
     println!("cargo:rustc-link-lib=asound");
     // Link soundio.
     println!("cargo:rustc-link-lib=soundio");
