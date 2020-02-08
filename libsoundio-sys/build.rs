@@ -87,7 +87,7 @@ fn main() {
     // Don't bother with shared libs.
     let dst = cfg
         .define("BUILD_DYNAMIC_LIBS", "OFF")
-        .define("BUILD_STATIC_LIBS", "OFF")
+        .define("BUILD_STATIC_LIBS", "ON")
         .define("BUILD_EXAMPLE_PROGRAMS", "OFF")
         .define("BUILD_TESTS", "OFF")
         .build();
@@ -103,10 +103,8 @@ fn main() {
         println!("cargo:rustc-link-lib=ole32");
     }
 
-    println!("cargo:rustc-link-search=native=/usr/lib/arm-linux-gnueabihf/");
-    println!("cargo:rustc-link-lib=dylib=asound");
     // Link soundio.
-    println!("cargo:rustc-link-lib=dylib=soundio");
+    println!("cargo:rustc-link-lib=static=soundio");
 
     // OSX
     if target.contains("apple") {

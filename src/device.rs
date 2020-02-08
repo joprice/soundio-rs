@@ -436,8 +436,8 @@ impl<'a> Device<'a> {
         unsafe {
             (*instream).sample_rate = sample_rate;
             (*instream).format = format.into();
-            (*instream).layout = layout.into();
-            (*instream).software_latency = latency;
+            //(*instream).layout = layout.into();
+            //(*instream).software_latency = latency;
             (*instream).read_callback = instream_read_callback;
             (*instream).overflow_callback = Some(instream_overflow_callback);
             (*instream).error_callback = Some(instream_error_callback);
